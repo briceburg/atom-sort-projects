@@ -1,9 +1,13 @@
 {
   "name": "atom-sort-projects",
   "main": "./lib/atom-sort-projects",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Atom package to sort projects alphabetically",
-  "keywords": ["sort", "projects", "alphabetically"],
+  "keywords": [
+    "sort",
+    "projects",
+    "alphabetically"
+  ],
   "repository": "https://github.com/robblue2x/atom-sort-projects.git",
   "license": "MIT",
   "engines": {
