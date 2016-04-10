@@ -2,17 +2,12 @@
   "name": "atom-sort-projects",
   "main": "./lib/atom-sort-projects",
   "version": "0.0.0",
-  "description": "A short description of your package",
-  "keywords": [
-  ],
-  "activationCommands": {
-    "atom-workspace": "atom-sort-projects:toggle"
-  },
+  "description": "Atom package to sort projects alphabetically",
+  "keywords": ["sort", "projects", "alphabetically"],
   "repository": "https://github.com/atom/atom-sort-projects",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

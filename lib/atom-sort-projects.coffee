@@ -1,4 +1,4 @@
-SortProjectsView = require './sort-projects-view'
+
 {CompositeDisposable} = require 'atom'
 
 module.exports = SortProjects =
@@ -10,17 +10,18 @@ module.exports = SortProjects =
     atom.project.setPaths(paths) if (atom.project.getPaths().toString() != paths.sort().toString())
 
   activate: (state) ->
-
-    # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
+    console.log state
     @subscriptions = new CompositeDisposable
-
-    # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'sort-projects:toggle': => @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-sort-projects:toggle': => @toggle()
+    @toggle() if state.enabled
 
   deactivate: ->
     @subscriptions.dispose()
 
   serialize: ->
+    state = {}
+    state.enabled = @onDidChangePathsSub != null
+    return state
 
   toggle: ->
     if @onDidChangePathsSub == null
