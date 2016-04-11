@@ -1,7 +1,7 @@
 {
   "name": "atom-sort-projects",
   "main": "./lib/atom-sort-projects",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Atom package to sort projects alphabetically",
   "keywords": [
     "sort",
