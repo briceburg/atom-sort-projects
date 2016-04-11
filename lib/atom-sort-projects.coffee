@@ -7,8 +7,8 @@ module.exports = SortProjects =
 
   sortProjects: (paths) ->
     paths.sort (a,b) ->
-      a = a.split("/").slice(-1)[0]
-      b = b.split("/").slice(-1)[0]
+      a = a.split("/").slice(-1)[0].toLowerCase()
+      b = b.split("/").slice(-1)[0].toLowerCase()
       if a > b then 1 else 0
     atom.project.setPaths(paths) if (atom.project.getPaths().toString() != paths.toString())
 
