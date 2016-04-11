@@ -6,11 +6,13 @@ module.exports = SortProjects =
   onDidChangePathsSub: null
 
   sortProjects: (paths) ->
-    paths.sort()
-    atom.project.setPaths(paths) if (atom.project.getPaths().toString() != paths.sort().toString())
+    paths.sort (a,b) ->
+      a = a.split("/").slice(-1)[0]
+      b = b.split("/").slice(-1)[0]
+      if a > b then 1 else 0
+    atom.project.setPaths(paths) if (atom.project.getPaths().toString() != paths.toString())
 
   activate: (state) ->
-    console.log state
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-sort-projects:toggle': => @toggle()
     @toggle() if state.enabled
@@ -19,9 +21,7 @@ module.exports = SortProjects =
     @subscriptions.dispose()
 
   serialize: ->
-    state = {}
-    state.enabled = @onDidChangePathsSub != null
-    return state
+    enabled: @onDidChangePathsSub != null
 
   toggle: ->
     if @onDidChangePathsSub == null
