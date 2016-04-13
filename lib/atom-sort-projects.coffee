@@ -4,8 +4,8 @@ module.exports = SortProjects =
 
   sortProjects: (paths) ->
     paths.sort (a,b) ->
-      a = a.replace( /.*\//, "").toLowerCase()
-      b = b.replace( /.*\//, "").toLowerCase()
+      a = a.replace( /.*[\/\\]/, "").toLowerCase()
+      b = b.replace( /.*[\/\\]/, "").toLowerCase()
       if a < b then -1 else 1
 
     if atom.project.getPaths().toString() != paths.toString()
