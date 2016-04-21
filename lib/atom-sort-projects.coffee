@@ -6,7 +6,9 @@ module.exports = SortProjects =
     paths.sort (a,b) ->
       a = a.replace( /.*[\/\\]/, "").toLowerCase()
       b = b.replace( /.*[\/\\]/, "").toLowerCase()
-      if a < b then -1 else 1
+      if a > b then 1
+      else if a < b then -1
+      else 0
 
     if atom.project.getPaths().toString() != paths.toString()
       atom.project.setPaths(paths)
