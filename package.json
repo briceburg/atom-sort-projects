@@ -1,14 +1,14 @@
 {
   "name": "atom-sort-projects",
   "main": "./lib/atom-sort-projects",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Atom package to sort projects alphabetically",
   "keywords": [
     "sort",
     "projects",
     "alphabetically"
   ],
-  "repository": "https://github.com/robblue2x/atom-sort-projects.git",
+  "repository": "https://gitlab.com/robblue2x/atom-sort-projects.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
