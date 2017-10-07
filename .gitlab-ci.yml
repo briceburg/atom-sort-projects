@@ -1,0 +1,20 @@
+stages:
+  - build
+  - release
+
+image: node:8
+
+build:
+  stage: build
+  tags: [docker]
+  script:
+    - npm i
+
+release:
+  stage: release
+  tags: [docker]
+  only: [master]
+  except: [tags]
+  script:
+    - npm i -g semantic-release-gitlab
+    - semantic-release-gitlab
